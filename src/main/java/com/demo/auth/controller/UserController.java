@@ -28,12 +28,21 @@ public class UserController {
 //    user and admin roles
     @GetMapping(value = "/user", produces = "application/json")
     public List<UsersDetails> getuserdetails(){
+        Users users = new Users();
 
-//        UsersDetails userDetails = new UsersDetails(1,"jill","F");
         List<UsersDetails> usersDetailsList = new ArrayList<>();
-//        usersDetailsList.add(userDetails);
         usersDetailsList.add(new UsersDetails(2,"jack","M"));
         usersDetailsList.add(new UsersDetails(3,"jem","M"));
+
+        users.setUsersDetailsList(usersDetailsList);
+
+//        UsersDetails userDetails = new UsersDetails(1,"jill","F");
+//        usersDetailsList.add(userDetails);
+
+        System.out.println("users.getUsersDetailsList() " + users.getUsersDetailsList().toString());
+        System.out.println("usersDetailsList " + usersDetailsList.toString());
+
+
 
         return usersDetailsList;
     }

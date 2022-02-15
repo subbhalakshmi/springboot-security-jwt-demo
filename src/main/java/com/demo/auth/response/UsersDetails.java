@@ -1,5 +1,7 @@
 package com.demo.auth.response;
 
+import com.google.gson.Gson;
+
 public class UsersDetails {
 
     private int id;
@@ -41,12 +43,17 @@ public class UsersDetails {
         this.gender = gender;
     }
 
-    @Override
+    /*@Override
     public String toString() {
-        return "UsersDetails{" +
+        return "Users {" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
                 '}';
+    }*/
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }

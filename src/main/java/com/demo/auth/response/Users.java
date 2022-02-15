@@ -1,5 +1,7 @@
 package com.demo.auth.response;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,10 +17,15 @@ public class Users {
         this.usersDetailsList = usersDetailsList;
     }
 
-    @Override
+   /* @Override
     public String toString() {
         return "Users{" +
                 "usersDetailsList=" + usersDetailsList +
                 '}';
+    }*/
+
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }
